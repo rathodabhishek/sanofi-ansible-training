@@ -1,0 +1,7 @@
+- name: my first playbook
+  hosts: all  #other examples: node1.sanofi.com #test #* (same as ALL)
+  tasks:
+    - name: task1
+      command: /bin/date
+
+

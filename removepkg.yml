@@ -1,0 +1,11 @@
+- name: Remove software
+  hosts: all
+  tasks:
+    - name: remove software
+      yum:
+        name: httpd
+        state: absent
+      register: abhishek
+    - name: print register varible
+      debug:
+        var: abhishek.rc

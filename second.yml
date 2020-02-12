@@ -1,0 +1,8 @@
+- name: Second Playbook
+  hosts: all
+  tasks:
+    - name: task1
+      copy:
+        content: "Bye Bye there welcome to ansible 101"
+        dest: /tmp/abc
+        follow: no

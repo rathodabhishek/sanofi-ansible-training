@@ -1,0 +1,11 @@
+- name: create user and group and add user in that group
+  hosts: all
+  tasks:
+    - group:
+        name: ansiblegroup
+        state: present
+    - user:
+          name: ansibleuser
+          group: ansiblegroup
+
+

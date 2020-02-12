@@ -1,0 +1,11 @@
+- name: install software
+  yum:
+    name: vsftpd
+    state: present
+- name: print something
+  debug:
+    msg: "{{ ansible_fqdn }}"
+- name: copy a file
+  copy: 
+    content: " hi all welcome to {{ ansible_hostname }}"
+    dest: /tmp/role-copy-file

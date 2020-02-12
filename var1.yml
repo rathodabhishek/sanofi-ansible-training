@@ -1,0 +1,9 @@
+- name: Example of variable
+  hosts: all
+  vars_prompt:
+    - name: pkg1
+      prompt: "What is your name "
+      private: no
+  tasks:
+    - debug:
+        msg: I am {{pkg1}}

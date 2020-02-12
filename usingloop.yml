@@ -1,0 +1,13 @@
+- name: using loop
+  hosts: all
+  become: yes
+  tasks:
+    - name: install softwares using loop
+      yum:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - httpd
+        - vsftpd
+        - mariadb
+

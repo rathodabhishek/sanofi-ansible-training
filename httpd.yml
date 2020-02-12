@@ -1,0 +1,15 @@
+- name: Second Playbook
+  hosts: all
+  tasks:
+    - name: task1- Install httpd and create index file
+      yum: 
+        name: httpd 
+        state: latest
+    - name: Create Index.html
+      copy:
+        content: "Hi Sanofi"
+        dest: /var/www/html/index.html
+    - name: Start service    
+      service:
+        name: httpd
+        state: started

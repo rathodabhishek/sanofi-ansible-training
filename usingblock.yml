@@ -1,0 +1,16 @@
+- name: Using block
+  hosts: all
+  tasks:
+    - block:
+        - name: task1
+          yum:
+            name: httpd123
+            state: present
+      rescue:
+        - name: rescue
+          debug:
+            msg: Task is rescued
+      always:
+        - name: task3
+          debug:
+            msg: This task will always run

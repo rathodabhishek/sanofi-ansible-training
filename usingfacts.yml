@@ -1,0 +1,13 @@
+- name: using facts
+  hosts: all
+  tasks:
+    - name: Ip Address
+      debug:
+        msg: This machine's IP is {{ ansible_default_ipv4.address }} 
+    - name: FQDN
+      debug:
+        msg: This machine's FQDN is {{ ansible_fqdn }}
+    - name:
+      debug:
+        msg: This machine's memorysize is {{ ansible_memory_mb }}
+
